@@ -42,3 +42,9 @@ bun run examples:sync
 ```
 
 By default this clones the Effect source to `.examples/effect`.
+
+## Agent guardrails
+
+Pi auto-loads the project-local extension in `.pi/extensions/enforce-bun.ts`.
+It blocks agent bash calls that try to use npm, pnpm, yarn, node, ts-node, tsx, npx, direct `vitest`, or Vite.
+Use Bun commands instead.
