@@ -32,6 +32,11 @@ bun run examples:sync
 
 Add applications under `apps/*` and reusable packages under `packages/*`.
 
+## Dependencies
+
+Shared dependency versions live in the root `workspaces.catalog`.
+Workspace packages should reference shared versions with `catalog:`.
+
 ## Source examples
 
 This template keeps browsable source checkouts in `.examples/`, which is gitignored.

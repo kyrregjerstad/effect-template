@@ -4,6 +4,11 @@
       "name": "effect",
       "url": "https://github.com/Effect-TS/effect.git",
       "ref": "main"
+    },
+    {
+      "name": "effect-monorepo",
+      "url": "https://github.com/lucas-barake/effect-monorepo",
+      "ref": "main"
     }
   ]
 }

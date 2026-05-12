@@ -79,14 +79,14 @@ export default function (pi: ExtensionAPI) {
   });
 
   pi.on("agent_end", async (_event, ctx) => {
-    ctx.ui.setStatus("project-check", "running project check");
+    ctx.ui.setStatus("project-check", "formatting and checking project");
 
     try {
       await runProjectCheck(ctx.cwd);
-      ctx.ui.notify("project check passed", "success");
+      ctx.ui.notify("project format and check passed", "success");
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      ctx.ui.notify(`project check failed:\n${message}`, "error");
+      ctx.ui.notify(`project format/check failed:\n${message}`, "error");
     } finally {
       ctx.ui.setStatus("project-check", undefined);
     }

@@ -6,4 +6,5 @@ if (gitStatus.stdout.toString().trim().length === 0) {
   process.exit(0);
 }
 
+await $`bun run format`;
 await $`bun run check`;
