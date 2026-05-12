@@ -1,0 +1,15 @@
+{
+  "name": "@effect-template/core",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsgo --project tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "effect": "3.21.2"
+  }
+}

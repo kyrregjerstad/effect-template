@@ -1,0 +1,9 @@
+{
+  "repos": [
+    {
+      "name": "effect",
+      "url": "https://github.com/Effect-TS/effect.git",
+      "ref": "main"
+    }
+  ]
+}
