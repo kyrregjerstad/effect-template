@@ -17,9 +17,7 @@ const failures: Array<{ name: string; error: unknown }> = [];
 await $`mkdir -p ${examplesDirectory}`;
 
 async function isGitRepository(directory: string) {
-  const result = await $`git -C ${directory} rev-parse --is-inside-work-tree`
-    .quiet()
-    .nothrow();
+  const result = await $`git -C ${directory} rev-parse --is-inside-work-tree`.quiet().nothrow();
 
   return result.exitCode === 0 && result.stdout.toString().trim() === "true";
 }
@@ -50,9 +48,7 @@ for (const repo of manifest.repos) {
     await $`git clone --depth=1 --branch ${ref} ${repo.url} ${destination}`;
   } catch (error) {
     failures.push({ name: repo.name, error });
-    console.error(
-      `Failed to sync ${repo.name}; continuing with remaining repos.`,
-    );
+    console.error(`Failed to sync ${repo.name}; continuing with remaining repos.`);
   }
 }
 
@@ -60,10 +56,7 @@ if (failures.length > 0) {
   console.error("\nSome example repositories failed to sync:");
 
   for (const failure of failures) {
-    const message =
-      failure.error instanceof Error
-        ? failure.error.message
-        : String(failure.error);
+    const message = failure.error instanceof Error ? failure.error.message : String(failure.error);
     console.error(`- ${failure.name}: ${message}`);
   }
 

@@ -4,9 +4,7 @@ export type AppEnvironment = "development" | "test" | "production";
 
 export class AppConfig extends Effect.Service<AppConfig>()("AppConfig", {
   effect: Effect.gen(function* () {
-    const appName = yield* Config.string("APP_NAME").pipe(
-      Config.withDefault("effect-template"),
-    );
+    const appName = yield* Config.string("APP_NAME").pipe(Config.withDefault("effect-template"));
     const environment = yield* Config.literal(
       "development",
       "test",

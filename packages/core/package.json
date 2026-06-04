@@ -1,13 +1,13 @@
 {
   "name": "@effect-template/core",
-  "type": "module",
   "private": true,
+  "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "scripts": {
-    "test": "vitest run",
-    "typecheck": "tsgo --project tsconfig.json --noEmit"
+    "test": "vp test",
+    "typecheck": "vp check --no-fmt --no-lint"
   },
   "dependencies": {
     "effect": "catalog:"

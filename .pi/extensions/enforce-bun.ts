@@ -71,7 +71,7 @@ export default function (pi: ExtensionAPI) {
       return {
         block: true,
         reason:
-          "This repository uses Bun. Use bun install, bun run <script>, bun <file>, bunx, and bun run test/check instead.",
+          "This repository uses Bun with Vite+ tooling. Use vp <command>, bun install, bun run <script>, bun <file>, bunx, and bun run test/check instead.",
       };
     }
 
