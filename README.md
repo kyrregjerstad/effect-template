@@ -24,7 +24,7 @@ packages/
 ```bash
 vp install
 vp check
-vp test
+vp test run
 bun run check
 bun run examples:sync
 ```
@@ -46,7 +46,7 @@ Add applications under `apps/*` and reusable packages under `packages/*`.
 Shared dependency versions live in the root `workspaces.catalog`.
 Workspace packages should reference shared versions with `catalog:`.
 
-The `vite` and `vitest` catalog entries are Vite+ package aliases. Keep the `vitest` alias while `@effect/vitest` imports the `vitest` package name.
+The `vite` and `vitest` catalog entries are Vite+ package aliases. Root package overrides keep transitive consumers on those aliases; keep the `vitest` alias while `@effect/vitest` imports the `vitest` package name.
 
 ## Source examples
 

@@ -1,5 +1,9 @@
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
+const allowedCommands = [
+  /^\s*npm\s+view(?:\s+[^;&|()]+)*\s*$/,
+];
+
 const blockedCommands = [
   /(^|[;&|()\s])npm(\s|$)/,
   /(^|[;&|()\s])npx(\s|$)/,
@@ -66,6 +70,10 @@ export default function (pi: ExtensionAPI) {
     if (event.toolName !== "bash") return undefined;
 
     const command = String(event.input.command ?? "");
+
+    if (allowedCommands.some((pattern) => pattern.test(command))) {
+      return undefined;
+    }
 
     if (blockedCommands.some((pattern) => pattern.test(command))) {
       return {
