@@ -2,9 +2,7 @@
 
 ## Effect
 
-- Put reusable Effect code in `packages/core` or other workspace packages.
 - Use `@effect/vitest` for Effect tests.
-- Prefer `it.effect` for tests of Effect programs.
 
 ## Source examples
 
